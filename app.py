@@ -4,9 +4,14 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
+import joblib
 
 # Load trained model
 model = pickle.load(open("model.pkl", "rb"))
+
+
+# Load preprocessing pipeline
+preprocessing_pipeline = joblib.load("preprocessing_pipeline.joblib")
 
 # App title
 st.title("🚗 Car Price Prediction App")
